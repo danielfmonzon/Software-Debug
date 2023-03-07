@@ -28,8 +28,14 @@ while True:
             new_password += encoded_password
         print('Your password has been encoded and stored!\n')
     elif option == '2':
-        # print(f'The encoded password is {new_password}, and the original password is {password}.\n')
-        pass
+        num = 0
+        for digit in str(new_password):
+            digit = int(digit)
+            digit += 7
+            digit %= 10
+            num *= 10
+            num += digit
+        print(f"The encoded password is {new_password}, and the original password is {num}")
     elif option == '3':
         break
     else:
